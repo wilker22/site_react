@@ -4,6 +4,9 @@ import Services from "./components/TopBanner/Services/Services";
 import TopNavigation from "./components/TopNavigation/TopNavigation";
 import Analysis from "./components/Analysis/Analysis";
 import Summary from "./components/Summary/Summary";
+import RecentProject from "./components/RecentProject/RecentProject";
+import Courses from "./components/Courses/Courses";
+
 
 
 function App() {
@@ -14,6 +17,8 @@ function App() {
       <Services />
       <Analysis />
       <Summary />
+      <RecentProject />
+      <Courses />
     </div>
   );
 }
