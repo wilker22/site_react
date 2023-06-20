@@ -7,6 +7,8 @@ import Summary from "./components/Summary/Summary";
 import RecentProject from "./components/RecentProject/RecentProject";
 import Courses from "./components/Courses/Courses";
 import Video from "./components/Video/Video";
+import ClientReview from "./components/ClientReview/ClientReview";
+
 
 
 
@@ -15,12 +17,13 @@ function App() {
     <div>
       <TopNavigation />
       <TopBanner />
-      <Services />
       <Analysis />
       <Summary />
       <RecentProject />
       <Courses />
       <Video />
+      <ClientReview />
+      <Services />
     </div>
   );
 }
