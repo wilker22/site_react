@@ -31,23 +31,33 @@ class Footer extends Component {
                         </Col>
 
                         <Col lg="3" md={6} sm={12} className="p-5 text-justify">
-                            <h2 className="footerName text-center">Address </h2>
+                            <h2 className="footerName">Address </h2>
                             <p className="footerDescription">
-                                6522 Baltimore National Pike CatonsVille, Califonia USA <br></br>
-                                <FontAwesomeIcon icon={faEnvelope} /> Email : Support@ele.com<br></br>
+                                Rua Lucas Roberto de Araújo, Petrolina PE <br></br>
+                                <FontAwesomeIcon icon={faEnvelope} /> Email : wtech@wtech.com<br></br>
                                 <FontAwesomeIcon icon={faPhone} /> Phone : 434343434<br></br>
                             </p>
                         </Col>
 
 
                         <Col lg="3" md={6} sm={12} className="p-5 text-justify">
-                            <h2 className="footerName text-center">Information </h2>
+                            <h2 className="footerName">Informações </h2>
+                            <a className="footerLink" href="#">Sobre Nós </a> <br></br>
+                            <a className="footerLink" href="#">Perfil da Companhia </a> <br></br>
+                            <a className="footerLink" href="#">Contato  </a> <br></br>
                         </Col>
 
                         <Col lg="3" md={6} sm={12} className="p-5 text-justify">
-                            <h2 className="footerName text-center">Policy  </h2>
+                            <h2 className="footerName">Policy  </h2>
+                            <a className="footerLink" href="#">Política de Reembolso  </a> <br></br>
+                            <a className="footerLink" href="#">Termos e Condições  </a> <br></br>
+                            <a className="footerLink" href="#">Política de Privaciade   </a> <br></br>
                         </Col>
                     </Row>
+                </Container>
+
+                <Container fluid={true} className="text-center copyrightSection">
+                    <a className="copyrightlink" href="#">© Copyright 2016 by WTech Learning, todos os direitos reservados</a>
                 </Container>
             </Fragment>
         )
