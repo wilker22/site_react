@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import designIcon from '../../../assets/image/design.png';
-import ecommerceIcon from '../../../assets/image/ecommerce.png';
-import webIcon from '../../../assets/image/web.png';
+import designIcon from '../../assets/image/design.png';
+import ecommerceIcon from '../../assets/image/ecommerce.png';
+import webIcon from '../../assets/image/web.png';
 
 
 class Services extends Component {
