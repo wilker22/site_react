@@ -1,4 +1,6 @@
 import React from "react";
+import {BrowserRouter} from "react-router-dom"
+import AppRouter from './router/AppRoutter';
 
 import AllServicePage from "./pages/AllServicePage";
 
@@ -6,10 +8,9 @@ import AllServicePage from "./pages/AllServicePage";
 
 function App() {
   return (
-    <div>
-      <AllServicePage />
-      
-    </div>
+    <BrowserRouter>
+     <AppRouter />
+     </BrowserRouter>
   );
 }
 

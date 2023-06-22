@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react'
 
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../../assets/css/custom.css';
 import whiteLogo from '../../assets/image/logo_white.png';
 import blackLogo from '../../assets/image/logo_black.png';
+import {NavLink} from "react-router-dom"
+
+
 
 class TopNavigation extends Component {
 
@@ -23,14 +25,15 @@ class TopNavigation extends Component {
 
     onScroll = () => {
         if (window.scrollY > 100) {
-            this.setState({ navBarTitle: 'navTitleScroll', navBarLogo: [blackLogo], navBarBack: 'navBackgroundScroll', navBarItem: 'navItemScroll', navVariant: 'dark' })
+            this.setState({ navBarTitle: 'navTitleScroll', navBarLogo: [blackLogo], navBarBack: 'navBackgroundScroll', navBarItem: 'navItemScroll', navVariant: 'ligth' })
         } else if (window.scrollY < 100) {
-            this.setState({ navBarTitle: 'navTitle', navBarLogo: [whiteLogo], navBarBack: 'navBackground', navBarItem: 'navItem', navVariant: 'ligth' })
+            this.setState({ navBarTitle: 'navTitle', navBarLogo: [whiteLogo], navBarBack: 'navBackground', navBarItem: 'navItem', navVariant: 'dark' })
         }
     }
 
     componentDidMount() {
-        this.setState({ navBarTitle: 'navTitle', navBarLogo: [whiteLogo] })
+        window.addEventListener('scroll', this.onScroll)
+        
     }
 
     render() {
@@ -44,12 +47,17 @@ class TopNavigation extends Component {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link className={this.state.navBarItem} href="#deets">INÍCIO</Nav.Link>
-                            <Nav.Link className={this.state.navBarItem} href="#deets">SOBRE</Nav.Link>
-                            <Nav.Link className={this.state.navBarItem} href="#deets">SERVIÇOS</Nav.Link>
-                            <Nav.Link className={this.state.navBarItem} href="#deets">CURSOS</Nav.Link>
-                            <Nav.Link className={this.state.navBarItem} href="#deets">PORTFOLIO</Nav.Link>
-                            <Nav.Link className={this.state.navBarItem} href="#deets">FALE CONOSCO</Nav.Link>
+                            <Nav.Link> <NavLink className={this.state.navBarItem} to="/">INÍCIO</NavLink> </Nav.Link>
+
+                            <Nav.Link> <NavLink className={this.state.navBarItem} to="/about">SOBRE</NavLink> </Nav.Link>
+
+                            <Nav.Link>  <NavLink className={this.state.navBarItem} to="/service">SERVIÇOS</NavLink> </Nav.Link>
+
+                            <Nav.Link>  <NavLink className={this.state.navBarItem} to="/course">CURSOS</NavLink> </Nav.Link>
+
+                            <Nav.Link>  <NavLink className={this.state.navBarItem} to="/porfolio">PORTFOLIO</NavLink> </Nav.Link>
+
+                            <Nav.Link>  <NavLink className={this.state.navBarItem} to="/contact">CONTATO</NavLink> </Nav.Link>
 
 
                         </Nav>

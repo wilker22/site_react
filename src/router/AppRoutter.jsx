@@ -17,7 +17,8 @@ class AppRoutter extends Component {
     render() {
         return (
             <Fragment>
-                <Switch>
+               <Router>
+               <Switch>
                     <Route exact path="/" component={ HomePage } />
                     <Route exact path="/service" component={AllServicePage} />
                     <Route exact path="/course" component={AllCourses} />
@@ -25,6 +26,8 @@ class AppRoutter extends Component {
                     <Route exact path="/about" component={AboutPage} />
                     <Route exact path="/contact" component={ContactPage} />
                 </Switch>
+               </Router>
+                
             </Fragment>
         )
     }
