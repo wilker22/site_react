@@ -7,11 +7,11 @@ import { Col, Container, Row } from 'react-bootstrap'
         <Fragment>
         <Container fluid={true} className="topFixedPage p-0" >
           <div className="topPageOverlay">
-            <Container className="topContent">
+            <Container className="topContentPage">
               <Row>
                 <Col className="text-center">
                   
-                  <h4 className="topSubTitle">{ this.props.pagetitle }</h4>
+                  <h4 className="topPageTitle">{ this.props.pagetitle }</h4>
                   
 
                 </Col>

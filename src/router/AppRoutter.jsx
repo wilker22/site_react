@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import AllCourses from '../components/AllCourses/AllCourses';
+import AllCoursesPage from '../pages/AllCoursesPage';
 import AboutPage from '../pages/AboutPage';
 import AllServicePage from '../pages/AllServicePage';
 import ContactPage from '../pages/ContactPages';
@@ -21,10 +21,11 @@ class AppRoutter extends Component {
                <Switch>
                     <Route exact path="/" component={ HomePage } />
                     <Route exact path="/service" component={AllServicePage} />
-                    <Route exact path="/course" component={AllCourses} />
+                    <Route exact path="/courses" component={AllCoursesPage} />
                     <Route exact path="/porfolio" component={PortfolioPage} />
                     <Route exact path="/about" component={AboutPage} />
                     <Route exact path="/contact" component={ContactPage} />
+                    
                 </Switch>
                </Router>
                 

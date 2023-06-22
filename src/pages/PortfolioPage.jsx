@@ -4,14 +4,14 @@ import PageTop from '../components/PageTop/PageTop'
 import AllProjects from '../components/AllProjects/AllProjects'
 import Footer from '../components/Footer/Footer'
 
- class PortfolioPage extends Component {
+class PortfolioPage extends Component {
   render() {
     return (
       <Fragment>
-        <TopNavigation/>
-        <PageTop />
-        <AllProjects/>
-        <Footer/>
+        <TopNavigation title="Portfolio" />
+        <PageTop pagetitle="Portfolio" />
+        <AllProjects />
+        <Footer />
       </Fragment>
     )
   }

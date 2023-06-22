@@ -3,8 +3,10 @@ import React, { Component, Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../../assets/css/custom.css';
-import whiteLogo from '../../assets/image/logo_white.png';
-import blackLogo from '../../assets/image/logo_black.png';
+import whiteLogo from '../../assets/image/WTECHLOGO4.png';
+import blackLogo from '../../assets/image/wtechlogoblk.png';
+//import whiteLogo from '../../assets/image/logo_white.png';
+//import blackLogo from '../../assets/image/logo_black.png';
 import {NavLink} from "react-router-dom"
 
 
@@ -53,7 +55,7 @@ class TopNavigation extends Component {
 
                             <Nav.Link>  <NavLink className={this.state.navBarItem} to="/service">SERVIÇOS</NavLink> </Nav.Link>
 
-                            <Nav.Link>  <NavLink className={this.state.navBarItem} to="/course">CURSOS</NavLink> </Nav.Link>
+                            <Nav.Link>  <NavLink className={this.state.navBarItem} to="/courses">CURSOS</NavLink> </Nav.Link>
 
                             <Nav.Link>  <NavLink className={this.state.navBarItem} to="/porfolio">PORTFOLIO</NavLink> </Nav.Link>
 
