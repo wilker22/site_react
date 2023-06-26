@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 
 class Courses extends Component {
@@ -21,7 +22,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="text-justify serviceName">Laravel 8  </h5>
                                     <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a className="courseViewMore float-left" href="#" >Detalhes</a>
+                                    <Link className="courseViewMore float-left" to="/coursedetails" >Ver mais...</Link>
                                 </Col>
 
 
@@ -33,7 +34,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="text-justify serviceName">Laravel 8  </h5>
                                     <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a className="courseViewMore float-left" href="#" >Detalhes</a>
+                                    <Link className="courseViewMore float-left" to="/coursedetails" >Ver mais...</Link>
                                 </Col>
 
 
@@ -50,7 +51,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="text-justify serviceName">Laravel 8  </h5>
                                     <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a className="courseViewMore float-left" href="#" >Detalhes</a>
+                                    <Link className="courseViewMore float-left" to="/coursedetails" >Ver mais...</Link>
                                 </Col>
 
 
@@ -62,7 +63,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="text-justify serviceName">Laravel 8  </h5>
                                     <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a className="courseViewMore float-left" href="#" >Detalhes</a>
+                                    <Link className="courseViewMore float-left" to="/coursedetails" >Ver mais...</Link>
                                 </Col>
 
 
