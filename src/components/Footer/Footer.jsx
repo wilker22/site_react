@@ -4,8 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 class Footer extends Component {
+
+   
+
+   
+
+
     render() {
         return (
             <Fragment>
@@ -49,7 +56,7 @@ class Footer extends Component {
 
                         <Col lg="3" md={6} sm={12} className="p-5 text-justify">
                             <h2 className="footerName">Policy  </h2>
-                            <a className="footerLink" href="#">Política de Reembolso  </a> <br></br>
+                            <Link className="footerLink" to="/refund">Refund Policy  </Link> <br></br>
                             <a className="footerLink" href="#">Termos e Condições  </a> <br></br>
                             <a className="footerLink" href="#">Política de Privaciade   </a> <br></br>
                         </Col>
