@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import Footer from '../components/Footer/Footer'
 import PageTop from '../components/PageTop/PageTop'
 import TopNavigation from '../components/TopNavigation/TopNavigation'
-import TremsDescription from '../components/TremsDescription/TremsDescription'
+import TermsDescription from '../components/TermsDescription/TermsDescription'
 
  class TremsPage extends Component {
      componentDidMount(){
@@ -11,9 +11,9 @@ import TremsDescription from '../components/TremsDescription/TremsDescription'
      render() {
           return (
              <Fragment>
-                  <TopNavigation title="Trems And Condition " />  
-                 <PageTop pagetitle="Trems And Condition" /> 
-                  <TremsDescription />
+                  <TopNavigation title="Termos e Condições " />  
+                 <PageTop pagetitle="Termos e Condições" /> 
+                  <TermsDescription />
                   <Footer />
              </Fragment>
           )

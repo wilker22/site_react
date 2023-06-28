@@ -11,8 +11,8 @@ import TopNavigation from '../components/TopNavigation/TopNavigation'
      render() {
           return (
                <Fragment>
-                    <TopNavigation title="Privacy And Policy" />  
-                     <PageTop pagetitle="Privacy And Policy" />  
+                    <TopNavigation title="Política de Privacidade" />  
+                     <PageTop pagetitle="Política de Privacidade" />  
                     <PrivacyDescription />
                     <Footer />
 

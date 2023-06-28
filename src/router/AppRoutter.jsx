@@ -8,6 +8,8 @@ import PortfolioPage from '../pages/PortfolioPage';
 import ProjectDetailsPage from '../pages/ProjectDetailsPage';
 import CourseDetailsPage from '../pages/CourseDetailsPage'
 import RefundPage from '../pages/RefundPage';
+import TermsPage from '../pages/TermsPage';
+import PrivacyPage from '../pages/PrivacyPage';
 
 import {
     BrowserRouter as Router,
@@ -32,6 +34,8 @@ class AppRoutter extends Component {
                     <Route exact path="/projectDetails" component={ProjectDetailsPage} />
                     <Route exact path="/coursedetails" component={CourseDetailsPage} />
                     <Route exact path="/refund" component={RefundPage} />  
+                    <Route exact path="/terms" component={TermsPage} /> 
+                    <Route exact path="/privacy" component={PrivacyPage} />
 
 
                     

@@ -49,16 +49,16 @@ class Footer extends Component {
 
                         <Col lg="3" md={6} sm={12} className="p-5 text-justify">
                             <h2 className="footerName">Informações </h2>
-                            <a className="footerLink" href="#">Sobre Nós </a> <br></br>
-                            <a className="footerLink" href="#">Perfil da Companhia </a> <br></br>
-                            <a className="footerLink" href="#">Contato  </a> <br></br>
+                            <Link className="footerLink" to="/about">Sobre Nós </Link> <br></br>
+                            <Link  className="footerLink" to="/about">Nosso Perfil </Link> <br></br>
+                            <Link className="footerLink" to="/contact">Contato   </Link> <br></br>
                         </Col>
 
                         <Col lg="3" md={6} sm={12} className="p-5 text-justify">
                             <h2 className="footerName">Policy  </h2>
                             <Link className="footerLink" to="/refund">Refund Policy  </Link> <br></br>
-                            <a className="footerLink" href="#">Termos e Condições  </a> <br></br>
-                            <a className="footerLink" href="#">Política de Privaciade   </a> <br></br>
+                            <Link className="footerLink" to="/terms">Termos e Condições  </Link> <br></br>
+                            <Link className="footerLink" to="/privacy">Política de Privacidade   </Link> <br></br>
                         </Col>
                     </Row>
                 </Container>
