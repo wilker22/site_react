@@ -1,7 +1,25 @@
+import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
 class TopBanner extends Component {
+
+  componentDidMount() {
+    
+
+    // Faz uma requisição a um usuarío com um ID expecifico
+    axios.get('http://127.0.0.1:8000/api/homepage/title')
+      .then(function (response) {
+        // manipula o sucesso da requisição
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // manipula erros da requisição
+        console.error(error);
+      })
+  }
+
+
   render() {
     return (
       <Fragment>
