@@ -1,22 +1,29 @@
 import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class TopBanner extends Component {
 
+  
+  constructor(){
+    super();
+    this.state = {
+      title:".....",
+      subtitle:"....."
+    }
+  }
+  
+  
   componentDidMount() {
-    
+      RestClient.GetRequest(AppUrl.HomeTopTitle).then(result=>{
+        this.setState({title:result[0]['home_title'], subtitle:result[0]['home_subtitle']});
+      }).catch(error => {
+        this.setState({title:"???", subtitle:"???"});
+      });
 
-    // Faz uma requisição a um usuarío com um ID expecifico
-    axios.get('http://127.0.0.1:8000/api/homepage/title')
-      .then(function (response) {
-        // manipula o sucesso da requisição
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        // manipula erros da requisição
-        console.error(error);
-      })
+   
   }
 
 
@@ -28,8 +35,8 @@ class TopBanner extends Component {
             <Container className="topContent">
               <Row>
                 <Col className="text-center">
-                  <h1 className="topTitle">WTech Learning</h1>
-                  <h4 className="topSubTitle">Cursos Tecnicos em Tecnologia da Informação</h4>
+                  <h1 className="topTitle">{this.state.title}</h1>
+                  <h4 className="topSubTitle">{this.state.subtitle}</h4>
                   <Button variant="primary">Saiba mais...</Button>
 
                 </Col>

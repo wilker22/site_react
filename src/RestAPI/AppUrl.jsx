@@ -1,8 +1,10 @@
 
 
 class AppUrl  {
-    static BaseURL = 'http://127.0.0.1:8000/api';
-    static HomePageTitle = this.BaseURL + '/homepage/title';
+    // static BaseURL = 'http://127.0.0.1:8000/api';
+    static BaseURL = 'https://rapi.wtech.eti.br/api';
+
+    static HomeTopTitle = this.BaseURL + '/homepage/title';
     static HomeTechDesc = this.BaseURL + '/techhome';
     static TotalHomeDetails = this.BaseURL + '/totalhome';
     static HomeVideo = this.BaseURL + '/home/video';

@@ -3,37 +3,58 @@ import { Col, Container, Row } from 'react-bootstrap'
 import designIcon from '../../assets/image/design.png';
 import ecommerceIcon from '../../assets/image/ecommerce.png';
 import webIcon from '../../assets/image/web.png';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
+
 
 
 class Services extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            myData: []
+        }
+    }
+
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.Services).then(result => {
+            this.setState({ myData: result });
+        })
+
+
+    }
+
+
     render() {
+
+        const MyList = this.state.myData;
+        const MyView = MyList.map(MyList => {
+
+            return <Col lg={4} md={6} sm={12}>
+                <div className='serviceCard text-center' >
+                    <img className='designIcon' src={MyList.service_logo} alt="" />
+                    <h2 className='serviceName'>{MyList.service_name}</h2>
+                    <p className='serviceDescription'>{MyList.service_description}</p>
+                </div>
+            </Col>
+
+
+        })
+
+
+
         return (
+
+
+
             <Fragment>
                 <Container className='text-center'>
                     <h1 className='serviceMainTitle'>NOSSOS SERVIÇOS</h1>
                     <div className='bottom'></div>
                     <Row>
-                        <Col lg={4} md={6} sm={12}>
-                            <div className='serviceCard text-center' >
-                                <img className='designIcon' src={designIcon} alt="" />
-                                <h2 className='serviceName'>Web Design</h2>
-                                <p className='serviceDescription'>Web Design qualificado com poder de atrair clientes!</p>
-                            </div>
-                        </Col>
-                        <Col lg={4} md={6} sm={12}>
-                            <div className='serviceCard text-center'>
-                                <img className='ecommerceIcon' src={ecommerceIcon} alt="" />
-                                <h2 className='serviceName'>Ecommerce</h2>
-                                <p className='serviceDescription'>Desenvolvimento de Loja Web com as melhores práticas!</p>
-                            </div>
-                        </Col>
-                        <Col lg={4} md={6} sm={12}>
-                            <div className='serviceCard text-center'>
-                                <img className='webIcon' src={webIcon} alt="" />
-                                <h2 className='serviceName'>Desenvolviento Web</h2>
-                                <p className='serviceDescription'>Desenvolvemos suas aplicações para Web!</p>
-                            </div>
-                        </Col>
+                       {MyView}
 
                     </Row>
                 </Container>
