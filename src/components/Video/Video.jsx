@@ -5,6 +5,9 @@ import { Col, Container, Modal, Row, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVideoSlash } from '@fortawesome/free-solid-svg-icons'
 
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
+
 import { Player, BigPlayButton } from 'video-react'
 
 class Video extends Component {
@@ -12,8 +15,19 @@ class Video extends Component {
     constructor() {
         super();
         this.state = {
-            show: false
+            show: false,
+            video_description:"",
+            video_url:""
         }
+    }
+
+    componentDidMount(){
+        RestClient.GetRequest(AppUrl.HomeVideo).then(result => {
+            this.setState({
+                video_description:result[0]['video_description'],
+                video_url:result[0]['video_url']
+            });
+        })
     }
 
     modalClose = () => this.setState({ show: false })
@@ -30,21 +44,8 @@ class Video extends Component {
                     <div className='bottom'></div>
                     <Row>
                         <Col lg={6} md={6} sm={12} className='videoText'>
-                            <p className='serviceDescription text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quis, omnis! Consequatur laboriosam laborum culpa obcaecati
-                                libero, fugit omnis. Doloribus consequatur deleniti rerum
-                                earum temporibus! Repellat id alias dignissimos laboriosam
-                                excepturi!.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quis, omnis! Consequatur laboriosam laborum culpa obcaecati
-                                libero, fugit omnis. Doloribus consequatur deleniti rerum
-                                earum temporibus! Repellat id alias dignissimos laboriosam
-                                excepturi!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quis, omnis! Consequatur laboriosam laborum culpa obcaecati
-                                libero, fugit omnis. Doloribus consequatur deleniti rerum
-                                earum temporibus! Repellat id alias dignissimos laboriosam
-                                excepturi!
+                            <p className='serviceDescription text-justify'>
+                                {this.state.video_description}
                             </p>
                         </Col>
 
@@ -56,19 +57,18 @@ class Video extends Component {
                 </Container>
 
               
-
-                <Modal show={this.state.show} onHide={this.modalClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                <Modal size="lg" show={this.state.show} onHide={this.modalClose}>
+                                    
+                    <Modal.Body>
+                        <Player src={this.state.video_url}>
+                            <BigPlayButton position="center" />
+                        </Player>
+                    </Modal.Body>
 
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.modalClose}>
-                            Close
+                            Fechar
                         </Button>
-
-
                     </Modal.Footer>
                 </Modal>
 
