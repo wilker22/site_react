@@ -1,24 +1,24 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class Analysis extends Component {
 
     constructor() {
         super();
         this.state = {
-            data: [
-                { Tecnologia: 'PHP', Projetos: 100 },
-                { Tecnologia: 'MySqli', Projetos: 90 },
-                { Tecnologia: 'Laravel', Projetos: 95 },
-                { Tecnologia: 'React', Projetos: 85 },
-                { Tecnologia: 'Opencart', Projetos: 80 },
-                { Tecnologia: 'Vue Js', Projetos: 70 },
-                { Tecnologia: 'Django', Projetos: 60 },
-                { Tecnologia: 'JavaScript', Projetos: 100 }
-            ]
+            data: []
         }
     }
+    
+    componentDidMount(){
+        RestClient.GetRequest(AppUrl.ChartData).then(result=>{
+             this.setState({data:result});
+             
+        }) 
+   }
 
     render() {
         var blue = "#051b35" 
@@ -31,9 +31,9 @@ class Analysis extends Component {
                         <Col style={{ width: '100%', height: '300px' }} lg={6} md={12} sm={12}>
                             <ResponsiveContainer>
                                 <BarChart width={100} height={300} data={this.state.data}>
-                                    <XAxis dataKey="Tecnologia" />
+                                    <XAxis dataKey="technology" />
                                     <Tooltip />
-                                    <Bar dataKey="Projetos" fill={blue}>
+                                    <Bar dataKey="projects" fill={blue}>
                                     </Bar>
                                 </BarChart>
                             </ResponsiveContainer>
