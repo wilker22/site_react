@@ -31,7 +31,7 @@ class AppRoutter extends Component {
                     <Route exact path="/porfolio" component={PortfolioPage} />
                     <Route exact path="/about" component={AboutPage} />
                     <Route exact path="/contact" component={ContactPage} />
-                    <Route exact path="/projectDetails" component={ProjectDetailsPage} />
+                    <Route exact path="/projectDetails/:projectID" component={ProjectDetailsPage} />
                     <Route exact path="/coursedetails" component={CourseDetailsPage} />
                     <Route exact path="/refund" component={RefundPage} />  
                     <Route exact path="/terms" component={TermsPage} /> 

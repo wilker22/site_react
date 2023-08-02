@@ -15,7 +15,7 @@ class AllServicePage extends Component {
      
           return (
              <Fragment>
-                  <TopNavigation />
+                  <TopNavigation title="Nossos Serviços" />
                   <PageTop pagetitle="Nossos Serviços" />
                   <Services />
                   <ContactSec />
